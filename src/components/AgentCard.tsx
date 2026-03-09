@@ -30,10 +30,10 @@ export default function AgentCard({ agent }: AgentCardProps) {
           <p className="mt-1 text-sm text-gray-500 line-clamp-1">{agent.category}</p>
         </div>
 
-        <button className="mt-3 inline-flex items-center text-sm font-semibold text-orange-600 transition-colors hover:text-orange-700">
+        <div className="mt-3 inline-flex items-center text-sm font-semibold text-orange-600 transition-colors">
           立即体验
           <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-        </button>
+        </div>
       </div>
     </a>
   );

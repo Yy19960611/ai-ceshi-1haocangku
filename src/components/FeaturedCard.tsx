@@ -40,11 +40,11 @@ export default function FeaturedCard({ agent }: FeaturedCardProps) {
       <p className="mb-4 text-sm font-semibold text-gray-600">{agent.category}</p>
       <p className="mb-6 text-sm text-gray-500 line-clamp-2">{agent.description}</p>
 
-      {/* 操作按钮 */}
-      <button className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-4 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:from-orange-600 hover:to-orange-700 hover:shadow-lg">
+      {/* 操作提示 */}
+      <div className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-4 py-2.5 text-sm font-semibold text-white shadow-md">
         立即体验
-        <ArrowRight className="ml-2 h-4 w-4" />
-      </button>
+        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+      </div>
     </a>
   );
 }
