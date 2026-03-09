@@ -14,7 +14,7 @@ export interface Agent {
   category: string;
   icon: string;
   iconColor?: string;
-  url?: string;
+  url: string;
   isFeatured?: boolean;
   badge?: string;
 }
@@ -40,6 +40,7 @@ export const featuredAgents: Agent[] = [
     category: 'AI绘画设计',
     icon: '🎨',
     iconColor: '#9333EA',
+    url: 'https://mxpainting.com/',
     isFeatured: true,
     badge: '推荐',
   },
@@ -50,6 +51,7 @@ export const featuredAgents: Agent[] = [
     category: 'AI视频生成',
     icon: '🎬',
     iconColor: '#3B82F6',
+    url: 'https://jimeng.jianying.com/',
     isFeatured: true,
   },
   {
@@ -59,6 +61,7 @@ export const featuredAgents: Agent[] = [
     category: 'AI智能体',
     icon: '🧠',
     iconColor: '#EC4899',
+    url: 'https://www.coze.cn/',
     isFeatured: true,
   },
   {
@@ -68,6 +71,7 @@ export const featuredAgents: Agent[] = [
     category: '常用小工具',
     icon: '📥',
     iconColor: '#F59E0B',
+    url: 'https://www.douyin.wtf/',
     isFeatured: true,
   },
 ];
@@ -82,6 +86,7 @@ export const allAgents: Agent[] = [
     category: 'AI通用模型',
     icon: '🤖',
     iconColor: '#6366F1',
+    url: 'https://www.deepseek.com/',
   },
   {
     id: 'tencent-yuanbao',
@@ -90,6 +95,7 @@ export const allAgents: Agent[] = [
     category: 'AI通用模型',
     icon: '🤖',
     iconColor: '#3B82F6',
+    url: 'https://yuanbao.tencent.com/',
   },
   {
     id: 'kimi',
@@ -98,6 +104,7 @@ export const allAgents: Agent[] = [
     category: 'AI通用模型',
     icon: '🤖',
     iconColor: '#8B5CF6',
+    url: 'https://kimi.moonshot.cn/',
   },
   {
     id: 'tongyi',
@@ -106,6 +113,7 @@ export const allAgents: Agent[] = [
     category: 'AI通用模型',
     icon: '🤖',
     iconColor: '#F59E0B',
+    url: 'https://tongyi.aliyun.com/',
   },
   {
     id: 'doubao',
@@ -114,6 +122,7 @@ export const allAgents: Agent[] = [
     category: 'AI通用模型',
     icon: '🤖',
     iconColor: '#EC4899',
+    url: 'https://www.doubao.com/',
   },
   {
     id: 'ernie',
@@ -122,6 +131,7 @@ export const allAgents: Agent[] = [
     category: 'AI通用模型',
     icon: '🤖',
     iconColor: '#EF4444',
+    url: 'https://yiyan.baidu.com/',
   },
   {
     id: 'spark',
@@ -130,6 +140,7 @@ export const allAgents: Agent[] = [
     category: 'AI通用模型',
     icon: '🤖',
     iconColor: '#06B6D4',
+    url: 'https://xinghuo.xfyun.cn/',
   },
   {
     id: 'glm',
@@ -138,6 +149,7 @@ export const allAgents: Agent[] = [
     category: 'AI通用模型',
     icon: '🤖',
     iconColor: '#14B8A6',
+    url: 'https://chatglm.cn/',
   },
   {
     id: 'claude',
@@ -146,6 +158,7 @@ export const allAgents: Agent[] = [
     category: 'AI通用模型',
     icon: '🤖',
     iconColor: '#8B5CF6',
+    url: 'https://claude.ai/',
   },
   {
     id: 'gpt4',
@@ -154,6 +167,7 @@ export const allAgents: Agent[] = [
     category: 'AI通用模型',
     icon: '🤖',
     iconColor: '#10B981',
+    url: 'https://chat.openai.com/',
   },
 
   // AI绘画设计
@@ -164,6 +178,7 @@ export const allAgents: Agent[] = [
     category: 'AI绘画设计',
     icon: '🎨',
     iconColor: '#8B5CF6',
+    url: 'https://www.midjourney.com/',
   },
   {
     id: 'stable-diffusion',
@@ -172,6 +187,7 @@ export const allAgents: Agent[] = [
     category: 'AI绘画设计',
     icon: '🎨',
     iconColor: '#F59E0B',
+    url: 'https://stability.ai/',
   },
   {
     id: 'dalle',
@@ -180,6 +196,7 @@ export const allAgents: Agent[] = [
     category: 'AI绘画设计',
     icon: '🎨',
     iconColor: '#10B981',
+    url: 'https://openai.com/dall-e-3',
   },
   {
     id: 'leonardo',
@@ -188,6 +205,7 @@ export const allAgents: Agent[] = [
     category: 'AI绘画设计',
     icon: '🎨',
     iconColor: '#EC4899',
+    url: 'https://leonardo.ai/',
   },
   {
     id: 'canva',
@@ -196,6 +214,7 @@ export const allAgents: Agent[] = [
     category: 'AI绘画设计',
     icon: '🎨',
     iconColor: '#3B82F6',
+    url: 'https://www.canva.com/',
   },
 
   // AI视频生成
@@ -206,6 +225,7 @@ export const allAgents: Agent[] = [
     category: 'AI视频生成',
     icon: '🎬',
     iconColor: '#8B5CF6',
+    url: 'https://runwayml.com/',
   },
   {
     id: 'pika',
@@ -214,6 +234,7 @@ export const allAgents: Agent[] = [
     category: 'AI视频生成',
     icon: '🎬',
     iconColor: '#F59E0B',
+    url: 'https://pika.art/',
   },
   {
     id: 'sora',
@@ -222,6 +243,7 @@ export const allAgents: Agent[] = [
     category: 'AI视频生成',
     icon: '🎬',
     iconColor: '#10B981',
+    url: 'https://openai.com/sora',
   },
   {
     id: 'synthesia',
@@ -230,6 +252,7 @@ export const allAgents: Agent[] = [
     category: 'AI视频生成',
     icon: '🎬',
     iconColor: '#3B82F6',
+    url: 'https://www.synthesia.io/',
   },
   {
     id: 'heygen',
@@ -238,6 +261,7 @@ export const allAgents: Agent[] = [
     category: 'AI视频生成',
     icon: '🎬',
     iconColor: '#EC4899',
+    url: 'https://www.heygen.com/',
   },
 
   // AI智能体
@@ -248,6 +272,7 @@ export const allAgents: Agent[] = [
     category: 'AI智能体',
     icon: '🧠',
     iconColor: '#EF4444',
+    url: 'https://github.com/Significant-Gravitas/AutoGPT',
   },
   {
     id: 'langchain',
@@ -256,6 +281,7 @@ export const allAgents: Agent[] = [
     category: 'AI智能体',
     icon: '🧠',
     iconColor: '#8B5CF6',
+    url: 'https://www.langchain.com/',
   },
   {
     id: 'gpt-engineer',
@@ -264,6 +290,7 @@ export const allAgents: Agent[] = [
     category: 'AI智能体',
     icon: '🧠',
     iconColor: '#3B82F6',
+    url: 'https://github.com/AntonOsika/gpt-engineer',
   },
   {
     id: 'babyagi',
@@ -272,6 +299,7 @@ export const allAgents: Agent[] = [
     category: 'AI智能体',
     icon: '🧠',
     iconColor: '#10B981',
+    url: 'https://github.com/yoheinakajima/babyagi',
   },
   {
     id: 'chatgpt-plugins',
@@ -280,6 +308,7 @@ export const allAgents: Agent[] = [
     category: 'AI智能体',
     icon: '🧠',
     iconColor: '#F59E0B',
+    url: 'https://openai.com/blog/chatgpt-plugins',
   },
 
   // AI写作助手
@@ -290,6 +319,7 @@ export const allAgents: Agent[] = [
     category: 'AI写作助手',
     icon: '✍️',
     iconColor: '#8B5CF6',
+    url: 'https://www.copy.ai/',
   },
   {
     id: 'jasper',
@@ -298,6 +328,7 @@ export const allAgents: Agent[] = [
     category: 'AI写作助手',
     icon: '✍️',
     iconColor: '#EF4444',
+    url: 'https://www.jasper.ai/',
   },
   {
     id: 'writesonic',
@@ -306,6 +337,7 @@ export const allAgents: Agent[] = [
     category: 'AI写作助手',
     icon: '✍️',
     iconColor: '#3B82F6',
+    url: 'https://writesonic.com/',
   },
   {
     id: 'notion-ai',
@@ -314,6 +346,7 @@ export const allAgents: Agent[] = [
     category: 'AI写作助手',
     icon: '✍️',
     iconColor: '#F59E0B',
+    url: 'https://www.notion.so/',
   },
   {
     id: 'grammarly',
@@ -322,6 +355,7 @@ export const allAgents: Agent[] = [
     category: 'AI写作助手',
     icon: '✍️',
     iconColor: '#10B981',
+    url: 'https://www.grammarly.com/',
   },
 
   // AI编程助手
@@ -332,6 +366,7 @@ export const allAgents: Agent[] = [
     category: 'AI编程助手',
     icon: '💻',
     iconColor: '#6366F1',
+    url: 'https://github.com/features/copilot',
   },
   {
     id: 'cursor',
@@ -340,6 +375,7 @@ export const allAgents: Agent[] = [
     category: 'AI编程助手',
     icon: '💻',
     iconColor: '#3B82F6',
+    url: 'https://cursor.sh/',
   },
   {
     id: 'tabnine',
@@ -348,6 +384,7 @@ export const allAgents: Agent[] = [
     category: 'AI编程助手',
     icon: '💻',
     iconColor: '#8B5CF6',
+    url: 'https://www.tabnine.com/',
   },
   {
     id: 'replit',
@@ -356,6 +393,7 @@ export const allAgents: Agent[] = [
     category: 'AI编程助手',
     icon: '💻',
     iconColor: '#F59E0B',
+    url: 'https://replit.com/',
   },
   {
     id: 'codium',
@@ -364,6 +402,7 @@ export const allAgents: Agent[] = [
     category: 'AI编程助手',
     icon: '💻',
     iconColor: '#10B981',
+    url: 'https://www.codium.ai/',
   },
 
   // 常用小工具
@@ -374,6 +413,7 @@ export const allAgents: Agent[] = [
     category: '常用小工具',
     icon: '🖼️',
     iconColor: '#EC4899',
+    url: 'https://www.upscayl.com/',
   },
   {
     id: 'bg-remove',
@@ -382,6 +422,7 @@ export const allAgents: Agent[] = [
     category: '常用小工具',
     icon: '✂️',
     iconColor: '#8B5CF6',
+    url: 'https://www.remove.bg/',
   },
   {
     id: 'pdf-ai',
@@ -390,6 +431,7 @@ export const allAgents: Agent[] = [
     category: '常用小工具',
     icon: '📄',
     iconColor: '#EF4444',
+    url: 'https://chatpdf.com/',
   },
   {
     id: 'voice-clone',
@@ -398,6 +440,7 @@ export const allAgents: Agent[] = [
     category: '常用小工具',
     icon: '🎙️',
     iconColor: '#3B82F6',
+    url: 'https://elevenlabs.io/',
   },
   {
     id: 'translate-ai',
@@ -406,6 +449,7 @@ export const allAgents: Agent[] = [
     category: '常用小工具',
     icon: '🌐',
     iconColor: '#10B981',
+    url: 'https://www.deepl.com/translator',
   },
 ];
 
@@ -415,4 +459,16 @@ export function getAgentsByCategory(categoryId: string): Agent[] {
     return allAgents;
   }
   return allAgents.filter(agent => agent.category === categories.find(c => c.id === categoryId)?.name);
+}
+
+// 获取所有分类的智能体数量
+export function getCategoryCounts(): Record<string, number> {
+  const counts: Record<string, number> = {};
+  allAgents.forEach(agent => {
+    const category = categories.find(c => c.name === agent.category);
+    if (category) {
+      counts[category.id] = (counts[category.id] || 0) + 1;
+    }
+  });
+  return counts;
 }

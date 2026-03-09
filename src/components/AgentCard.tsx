@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 import { Agent } from '@/lib/data';
 
 interface AgentCardProps {
@@ -7,7 +7,12 @@ interface AgentCardProps {
 
 export default function AgentCard({ agent }: AgentCardProps) {
   return (
-    <div className="group flex items-start space-x-4 rounded-xl border border-gray-200 bg-white p-4 transition-all duration-200 hover:border-blue-300 hover:shadow-md">
+    <a
+      href={agent.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex items-start space-x-4 rounded-xl border border-gray-200 bg-white p-4 transition-all duration-200 hover:border-blue-300 hover:shadow-md"
+    >
       {/* 左侧图标 */}
       <div
         className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl text-2xl"
@@ -30,6 +35,6 @@ export default function AgentCard({ agent }: AgentCardProps) {
           <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
         </button>
       </div>
-    </div>
+    </a>
   );
 }

@@ -1,4 +1,4 @@
-import { Star, ArrowRight } from 'lucide-react';
+import { Star, ArrowRight, ExternalLink } from 'lucide-react';
 import { Agent } from '@/lib/data';
 
 interface FeaturedCardProps {
@@ -7,7 +7,12 @@ interface FeaturedCardProps {
 
 export default function FeaturedCard({ agent }: FeaturedCardProps) {
   return (
-    <div className="group overflow-hidden rounded-2xl bg-white p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+    <a
+      href={agent.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block overflow-hidden rounded-2xl bg-white p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+    >
       {/* 顶部区域 */}
       <div className="mb-4 flex items-start justify-between">
         <div className="flex items-center space-x-3">
@@ -40,6 +45,6 @@ export default function FeaturedCard({ agent }: FeaturedCardProps) {
         立即体验
         <ArrowRight className="ml-2 h-4 w-4" />
       </button>
-    </div>
+    </a>
   );
 }
