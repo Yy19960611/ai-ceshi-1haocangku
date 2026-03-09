@@ -103,6 +103,7 @@ pnpm run build
 │   │   ├── CategoryNav.tsx      # 分类导航
 │   │   ├── AgentCard.tsx        # 工具卡片
 │   │   ├── AgentSection.tsx     # 工具列表
+│   │   ├── FloatingWindow.tsx   # 悬浮窗
 │   │   └── Footer.tsx           # 页脚
 │   └── lib/
 │       └── data.ts        # 数据配置
@@ -126,6 +127,7 @@ export const allAgents: Agent[] = [
     category: '分类名称',
     icon: '🎨',
     iconColor: '#8B5CF6',
+    url: 'https://example.com',
   },
   // 添加更多工具...
 ];
@@ -134,3 +136,4 @@ export const allAgents: Agent[] = [
 ## License
 
 MIT
+

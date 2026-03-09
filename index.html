@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能体工具库 - 发现最棒的AI智能体</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v4-shims.min.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#f59e0b',
+                        accent: '#10b981',
+                        dark: '#1f2937',
+                        light: '#f9fafb'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50 text-gray-800">
+    <!-- 顶部导航栏 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-robot text-primary text-2xl"></i>
+                <h1 class="text-xl font-bold text-dark">智能体工具库</h1>
+            </div>
+            
+            <div class="relative w-64">
+                <input type="text" placeholder="搜索智能体..." 
+                       class="w-full pl-10 pr-4 py-2 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all">
+                <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- 横幅区域 -->
+    <section class="relative h-64 md:h-80 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-600/80 to-blue-600/80 z-10"></div>
+        <img src="https://aka.doubaocdn.com/s/QwpI1wAMAu?alice_filename=gjk.png" 
+             alt="智能体世界" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 flex items-center justify-center z-20">
+            <div class="text-center text-white">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2 text-shadow">探索智能体的无限可能</h2>
+                <p class="text-lg md:text-xl text-shadow">发现最强大的AI智能体工具</p>
+            </div>
+        </div>
+        <div class="absolute top-4 right-4 z-20">
+            <div class="bg-white rounded-lg p-2 shadow-lg">
+                <img src="https://via.placeholder.com/100" alt="二维码" class="w-24 h-24">
+                <p class="text-xs text-center mt-1 text-dark">扫码加入智能体社区</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要内容区域 -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- 置顶推荐区域 -->
+        <section class="mb-12">
+            <div class="flex items-center mb-6">
+                <div class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium mr-2">置顶推荐</div>
+                <span class="text-gray-500 text-sm">精选优质智能体</span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 推荐卡片1 -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-bullseye text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">任务智能体</h3>
+                            <p class="text-gray-500 text-sm">自动化任务处理</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">智能处理各种日常任务，提高工作效率</p>
+                    <button class="text-primary font-medium hover:text-primary/80 transition-colors">
+                        立即体验 <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- 推荐卡片2 -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-comments text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">对话智能体</h3>
+                            <p class="text-gray-500 text-sm">智能对话助手</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">自然语言对话，提供智能问答和建议</p>
+                    <button class="text-primary font-medium hover:text-primary/80 transition-colors">
+                        立即体验 <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- 推荐卡片3 -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-brain text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">决策智能体</h3>
+                            <p class="text-gray-500 text-sm">智能决策支持</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">基于数据分析的智能决策建议系统</p>
+                    <button class="text-primary font-medium hover:text-primary/80 transition-colors">
+                        立即体验 <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- 推荐卡片4 -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-robot text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">协作智能体</h3>
+                            <p class="text-gray-500 text-sm">多智能体协作</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">多个智能体协同完成复杂任务</p>
+                    <button class="text-primary font-medium hover:text-primary/80 transition-colors">
+                        立即体验 <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 智能体分类区域 -->
+        <section class="mb-12">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center">
+                    <div class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium mr-2">智能体分类</div>
+                    <span class="text-gray-500 text-sm">28个分类</span>
+                </div>
+                <button class="text-primary hover:text-primary/80 transition-colors">
+                    查看全部 <i class="fas fa-angle-right ml-1"></i>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <!-- 分类项 -->
+                <div class="flex items-center p-3 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+                    <i class="fas fa-bullseye text-purple-500 text-xl mr-3"></i>
+                    <div>
+                        <h4 class="font-medium">任务智能体</h4>
+                        <p class="text-gray-500 text-xs">12个工具</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center p-3 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+                    <i class="fas fa-comments text-blue-500 text-xl mr-3"></i>
+                    <div>
+                        <h4 class="font-medium">对话智能体</h4>
+                        <p class="text-gray-500 text-xs">18个工具</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center p-3 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+                    <i class="fas fa-brain text-green-500 text-xl mr-3"></i>
+                    <div>
+                        <h4 class="font-medium">决策智能体</h4>
+                        <p class="text-gray-500 text-xs">15个工具</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center p-3 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+                    <i class="fas fa-robot text-orange-500 text-xl mr-3"></i>
+                    <div>
+                        <h4 class="font-medium">协作智能体</h4>
+                        <p class="text-gray-500 text-xs">8个工具</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center p-3 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+                    <i class="fas fa-search text-indigo-500 text-xl mr-3"></i>
+                    <div>
+                        <h4 class="font-medium">搜索智能体</h4>
+                        <p class="text-gray-500 text-xs">12个工具</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center p-3 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+                    <i class="fas fa-paint-brush text-pink-500 text-xl mr-3"></i>
+                    <div>
+                        <h4 class="font-medium">创作智能体</h4>
+                        <p class="text-gray-500 text-xs">20个工具</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门智能体区域 -->
+        <section class="mb-12">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center">
+                    <div class="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium mr-2">热门智能体</div>
+                    <span class="text-gray-500 text-sm">基于使用热度排序</span>
+                </div>
+                <div class="flex space-x-2">
+                    <button class="px-3 py-1 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors text-sm">
+                        <i class="fas fa-th-large mr-1"></i> 卡片
+                    </button>
+                    <button class="px-3 py-1 rounded-lg hover:bg-gray-100 transition-colors text-sm">
+                        <i class="fas fa-list mr-1"></i> 列表
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- 智能体卡片1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-bullseye text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">AutoGPT</h3>
+                                <p class="text-gray-500 text-sm">自主任务智能体</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">能够自主完成复杂任务的智能体，无需人类干预即可实现目标</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="px-2 py-1 rounded-full bg-blue-100 text-blue-600 text-xs">自主决策</span>
+                                <span class="px-2 py-1 rounded-full bg-green-100 text-green-600 text-xs">任务规划</span>
+                            </div>
+                            <button class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 智能体卡片2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-comments text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">ChatGPT</h3>
+                                <p class="text-gray-500 text-sm">对话智能助手</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">强大的对话智能体，支持多轮对话和复杂问题解答</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="px-2 py-1 rounded-full bg-blue-100 text-blue-600 text-xs">对话</span>
+                                <span class="px-2 py-1 rounded-full bg-purple-100 text-purple-600 text-xs">问答</span>
+                            </div>
+                            <button class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 智能体卡片3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-bullseye text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Gemini</h3>
+                                <p class="text-gray-500 text-sm">多模态智能体</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">支持文本、图像、音频等多种模态的智能体</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="px-2 py-1 rounded-full bg-blue-100 text-blue-600 text-xs">多模态</span>
+                                <span class="px-2 py-1 rounded-full bg-green-100 text-green-600 text-xs">推理</span>
+                            </div>
+                            <button class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 智能体卡片4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-bullseye text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Claude</h3>
+                                <p class="text-gray-500 text-sm">长文本智能体</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">擅长处理长文本的智能体，支持100k上下文窗口</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="px-2 py-1 rounded-full bg-blue-100 text-blue-600 text-xs">长文本</span>
+                                <span class="px-2 py-1 rounded-full bg-purple-100 text-purple-600 text-xs">分析</span>
+                            </div>
+                            <button class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 智能体卡片5 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-bullseye text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">DeepSeek</h3>
+                                <p class="text-gray-500 text-sm">代码智能体</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">专注于代码生成和编程辅助的智能体</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="px-2 py-1 rounded-full bg-blue-100 text-blue-600 text-xs">代码</span>
+                                <span class="px-2 py-1 rounded-full bg-green-100 text-green-600 text-xs">编程</span>
+                            </div>
+                            <button class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 智能体卡片6 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-bullseye text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">文心一言</h3>
+                                <p class="text-gray-500 text-sm">中文智能体</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">专为中文优化的智能体，理解中文语境更准确</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="px-2 py-1 rounded-full bg-blue-100 text-blue-600 text-xs">中文</span>
+                                <span class="px-2 py-1 rounded-full bg-purple-100 text-purple-600 text-xs">对话</span>
+                            </div>
+                            <button class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 智能体卡片7 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-bullseye text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">通义千问</h3>
+                                <p class="text-gray-500 text-sm">阿里云智能体</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">阿里云推出的智能对话助手</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="px-2 py-1 rounded-full bg-blue-100 text-blue-600 text-xs">对话</span>
+                                <span class="px-2 py-1 rounded-full bg-green-100 text-green-600 text-xs">推理</span>
+                            </div>
+                            <button class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 智能体卡片8 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-bullseye text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">讯飞星火</h3>
+                                <p class="text-gray-500 text-sm">讯飞智能体</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">科大讯飞推出的智能对话系统</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="px-2 py-1 rounded-full bg-blue-100 text-blue-600 text-xs">语音</span>
+                                <span class="px-2 py-1 rounded-full bg-purple-100 text-purple-600 text-xs">对话</span>
+                            </div>
+                            <button class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 智能体排行榜 -->
+        <section class="mb-12">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center">
+                    <div class="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-medium mr-2">排行榜</div>
+                    <span class="text-gray-500 text-sm">本周最受欢迎智能体</span>
+                </div>
+                <select class="text-sm border border-gray-200 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-primary/50">
+                    <option>本周</option>
+                    <option>本月</option>
+                    <option>全年</option>
+                </select>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- 第一名 -->
+                    <div class="flex items-center p-4 rounded-lg bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200">
+                        <div class="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">1</div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-lg">ChatGPT</h4>
+                            <p class="text-gray-500 text-sm">对话智能助手</p>
+                            <div class="flex items-center mt-2">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-500 text-sm ml-2">4.9分</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-2xl font-bold text-primary">12.5K</p>
+                            <p class="text-gray-500 text-xs">使用次数</p>
+                        </div>
+                    </div>
+
+                    <!-- 第二名 -->
+                    <div class="flex items-center p-4 rounded-lg bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200">
+                        <div class="w-12 h-12 bg-gradient-to-r from-gray-400 to-gray-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">2</div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-lg">Gemini</h4>
+                            <p class="text-gray-500 text-sm">多模态智能体</p>
+                            <div class="flex items-center mt-2">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="text-gray-500 text-sm ml-2">4.7分</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-2xl font-bold text-primary">9.8K</p>
+                            <p class="text-gray-500 text-xs">使用次数</p>
+                        </div>
+                    </div>
+
+                    <!-- 第三名 -->
+                    <div class="flex items-center p-4 rounded-lg bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200">
+                        <div class="w-12 h-12 bg-gradient-to-r from-orange-400 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">3</div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-lg">Claude</h4>
+                            <p class="text-gray-500 text-sm">长文本智能体</p>
+                            <div class="flex items-center mt-2">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-500 text-sm ml-2">4.8分</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-2xl font-bold text-primary">7.2K</p>
+                            <p class="text-gray-500 text-xs">使用次数</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 其他排名 -->
+                <div class="mt-6 space-y-3">
+                    <div class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg transition-colors">
+                        <div class="flex items-center">
+                            <span class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-medium mr-3">4</span>
+                            <div>
+                                <h5 class="font-medium">AutoGPT</h5>
+                                <p class="text-gray-500 text-xs">自主任务智能体</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-600">4.6分</span>
+                            <span class="text-primary font-medium">5.8K</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg transition-colors">
+                        <div class="flex items-center">
+                            <span class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-medium mr-3">5</span>
+                            <div>
+                                <h5 class="font-medium">文心一言</h5>
+                                <p class="text-gray-500 text-xs">中文智能体</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-o"></i>
+                            </div>
+                            <span class="text-gray-600">4.5分</span>
+                            <span class="text-primary font-medium">4.9K</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg transition-colors">
+                        <div class="flex items-center">
+                            <span class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-medium mr-3">6</span>
+                            <div>
+                                <h5 class="font-medium">通义千问</h5>
+                                <p class="text-gray-500 text-xs">阿里云智能体</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-600">4.6分</span>
+                            <span class="text-primary font-medium">4.2K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-6">
+                    <button class="px-6 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
+                        查看完整排行榜
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-robot text-primary text-2xl"></i>
+                        <h3 class="text-xl font-bold">智能体工具库</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">发现和使用最强大的AI智能体工具，让工作和生活更高效</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-weixin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">智能体分类</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">任务智能体</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">对话智能体</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">决策智能体</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">协作智能体</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">搜索智能体</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">热门工具</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">ChatGPT</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Gemini</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Claude</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">AutoGPT</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">文心一言</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">联系我们</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            contact@aigents.com
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i>
+                            +86 138 0013 8000
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            北京市朝阳区
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2025 智能体工具库. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-primary/80 transition-all transform scale-0 hover:scale-110">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 返回顶部功能
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('scale-0');
+                backToTopButton.classList.add('scale-100');
+            } else {
+                backToTopButton.classList.remove('scale-100');
+                backToTopButton.classList.add('scale-0');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 搜索框交互
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', function() {
+            this.parentElement.classList.add('ring-2', 'ring-primary/50');
+        });
+        searchInput.addEventListener('blur', function() {
+            this.parentElement.classList.remove('ring-2', 'ring-primary/50');
+        });
+    </script>
+</body>
+</html>
