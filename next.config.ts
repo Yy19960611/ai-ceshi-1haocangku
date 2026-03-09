@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   // outputFileTracingRoot: path.resolve(__dirname, '../../'),
   /* config options here */
   allowedDevOrigins: ['*.dev.coze.site'],
+  output: 'export',
+  basePath: '/ai-ceshi-1haocangku',
+  trailingSlash: true,
   images: {
     remotePatterns: [
       {
@@ -13,6 +16,7 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
+    unoptimized: true,
   },
 };
 
