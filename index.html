@@ -1,108 +1,750 @@
+智能体工具库网页
+
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 智能体集合</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #f6f8fa;
-            color: #333;
-            padding: 20px;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        header {
-            text-align: center;
-            margin: 50px 0 30px;
-        }
-        h1 {
-            font-size: 28px;
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            color: #666;
-            font-size: 16px;
-        }
-        .card-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-        }
-        .card:hover {
-            transform: translateY(-4px);
-        }
-        .card h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-        .card p {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.4;
-        }
-    </style>
-</head>
-<body>
 
-<div class="container">
-    <header>
-        <h1>AI 智能体集合</h1>
-        <p class="subtitle">简洁好用的个人 AI 工具面板</p >
-    </header>
+    
+    
+    智能体工具库 - 发现最棒的AI智能体
+    
+    
+    
 
-    <div class="card-list">
-        <!-- 你可以无限复制卡片 -->
-        <a class="card" href="https://www.coze.cn/store/agent/7613305728820002857?bot_id=true" target="_blank">
-            <h3>AI 一键办公智能体 1</h3>
-            <p>一键搞定文档处理、数据整理、PPT美化</p >
-        </a >
+    
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#f59e0b',
+                        accent: '#10b981',
+                        dark: '#1f2937',
+                        light: '#f9fafb'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    
 
-        <a class="card" href="https://www.coze.cn/你的智能体Web链接" target="_blank">
-            <h3>AI 助手 2</h3>
-            <p>专业工具、数据分析、办公助手</p >
-        </a >
+    
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+        }
+    
 
-        <a class="card" href="https://www.coze.cn/你的智能体Web链接" target="_blank">
-            <h3>AI 助手 3</h3>
-            <p>自定义功能，按需使用</p >
-        </a >
-    </div>
-</div>
+    
+    
+        
+            
+                
+                智能体工具库
+            
 
-<!-- 扣子智能体悬浮窗（替换成你的 Bot ID 即可） -->
-<script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/latest/libs/cn/index.js"></script>
-<script>
-new CozeWebSDK.WebChatClient({
-  config: {
-    bot_id: "这里填入你的 Bot ID",
-  },
-  componentProps: {
-    title: "AI 助手",
-    position: "bottom-right"
-  }
-});
-</script>
+            
+                
+                
+            
+        
+    
 
-</body>
-</html>
+    
+
+    
+        
+        
+        
+            
+                探索智能体的无限可能
+                发现最强大的AI智能体工具
+            
+        
+        
+            
+                
+                扫码加入智能体社区
+            
+        
+    
+
+    
+
+    
+        
+        
+            
+                置顶推荐
+                精选优质智能体
+            
+
+            
+                
+                
+                    
+                        
+                            
+                        
+                        
+                            任务智能体
+                            自动化任务处理
+                        
+                    
+                    智能处理各种日常任务，提高工作效率
+                    
+                        立即体验 
+                    
+                
+
+                
+
+                
+                    
+                        
+                            
+                        
+                        
+                            对话智能体
+                            智能对话助手
+                        
+                    
+                    自然语言对话，提供智能问答和建议
+                    
+                        立即体验 
+                    
+                
+
+                
+
+                
+                    
+                        
+                            
+                        
+                        
+                            决策智能体
+                            智能决策支持
+                        
+                    
+                    基于数据分析的智能决策建议系统
+                    
+                        立即体验 
+                    
+                
+
+                
+
+                
+                    
+                        
+                            
+                        
+                        
+                            协作智能体
+                            多智能体协作
+                        
+                    
+                    多个智能体协同完成复杂任务
+                    
+                        立即体验 
+                    
+                
+            
+        
+
+        
+
+        
+            
+                
+                    智能体分类
+                    28个分类
+                
+                
+                    查看全部 
+                
+            
+
+            
+                
+                
+                    
+                    
+                        任务智能体
+                        12个工具
+                    
+                
+
+                
+                    
+                    
+                        对话智能体
+                        18个工具
+                    
+                
+
+                
+                    
+                    
+                        决策智能体
+                        15个工具
+                    
+                
+
+                
+                    
+                    
+                        协作智能体
+                        8个工具
+                    
+                
+
+                
+                    
+                    
+                        搜索智能体
+                        12个工具
+                    
+                
+
+                
+                    
+                    
+                        创作智能体
+                        20个工具
+                    
+                
+            
+        
+
+        
+
+        
+            
+                
+                    热门智能体
+                    基于使用热度排序
+                
+                
+                    
+                         卡片
+                    
+                    
+                         列表
+                    
+                
+            
+
+            
+                
+                
+                    
+                        
+                            
+                                
+                            
+                            
+                                AutoGPT
+                                自主任务智能体
+                            
+                        
+                        能够自主完成复杂任务的智能体，无需人类干预即可实现目标
+                        
+                            
+                                自主决策
+                                任务规划
+                            
+                            
+                                
+                            
+                        
+                    
+                
+
+                
+
+                
+                    
+                        
+                            
+                                
+                            
+                            
+                                ChatGPT
+                                对话智能助手
+                            
+                        
+                        强大的对话智能体，支持多轮对话和复杂问题解答
+                        
+                            
+                                对话
+                                问答
+                            
+                            
+                                
+                            
+                        
+                    
+                
+
+                
+
+                
+                    
+                        
+                            
+                                
+                            
+                            
+                                Gemini
+                                多模态智能体
+                            
+                        
+                        支持文本、图像、音频等多种模态的智能体
+                        
+                            
+                                多模态
+                                推理
+                            
+                            
+                                
+                            
+                        
+                    
+                
+
+                
+
+                
+                    
+                        
+                            
+                                
+                            
+                            
+                                Claude
+                                长文本智能体
+                            
+                        
+                        擅长处理长文本的智能体，支持100k上下文窗口
+                        
+                            
+                                长文本
+                                分析
+                            
+                            
+                                
+                            
+                        
+                    
+                
+
+                
+
+                
+                    
+                        
+                            
+                                
+                            
+                            
+                                DeepSeek
+                                代码智能体
+                            
+                        
+                        专注于代码生成和编程辅助的智能体
+                        
+                            
+                                代码
+                                编程
+                            
+                            
+                                
+                            
+                        
+                    
+                
+
+                
+
+                
+                    
+                        
+                            
+                                
+                            
+                            
+                                文心一言
+                                中文智能体
+                            
+                        
+                        专为中文优化的智能体，理解中文语境更准确
+                        
+                            
+                                中文
+                                对话
+                            
+                            
+                                
+                            
+                        
+                    
+                
+
+                
+
+                
+                    
+                        
+                            
+                                
+                            
+                            
+                                通义千问
+                                阿里云智能体
+                            
+                        
+                        阿里云推出的智能对话助手
+                        
+                            
+                                对话
+                                推理
+                            
+                            
+                                
+                            
+                        
+                    
+                
+
+                
+
+                
+                    
+                        
+                            
+                                
+                            
+                            
+                                讯飞星火
+                                讯飞智能体
+                            
+                        
+                        科大讯飞推出的智能对话系统
+                        
+                            
+                                语音
+                                对话
+                            
+                            
+                                
+                            
+                        
+                    
+                
+            
+        
+
+        
+
+        
+            
+                
+                    排行榜
+                    本周最受欢迎智能体
+                
+                
+                    本周
+                    本月
+                    全年
+                
+            
+
+            
+                
+                    
+                    
+                        1
+                        
+                            ChatGPT
+                            对话智能助手
+                            
+                                
+                                    
+                                    
+                                    
+                                    
+                                    
+                                
+                                4.9分
+                            
+                        
+                        
+                            12.5K
+                            使用次数
+                        
+                    
+
+                    
+
+                    
+                        2
+                        
+                            Gemini
+                            多模态智能体
+                            
+                                
+                                    
+                                    
+                                    
+                                    
+                                    
+                                
+                                4.7分
+                            
+                        
+                        
+                            9.8K
+                            使用次数
+                        
+                    
+
+                    
+
+                    
+                        3
+                        
+                            Claude
+                            长文本智能体
+                            
+                                
+                                    
+                                    
+                                    
+                                    
+                                    
+                                
+                                4.8分
+                            
+                        
+                        
+                            7.2K
+                            使用次数
+                        
+                    
+                
+
+                
+
+                
+                    
+                        
+                            4
+                            
+                                AutoGPT
+                                自主任务智能体
+                            
+                        
+                        
+                            
+                                
+                                
+                                
+                                
+                                
+                            
+                            4.6分
+                            5.8K
+                        
+                    
+
+                    
+                        
+                            5
+                            
+                                文心一言
+                                中文智能体
+                            
+                        
+                        
+                            
+                                
+                                
+                                
+                                
+                                
+                            
+                            4.5分
+                            4.9K
+                        
+                    
+
+                    
+                        
+                            6
+                            
+                                通义千问
+                                阿里云智能体
+                            
+                        
+                        
+                            
+                                
+                                
+                                
+                                
+                                
+                            
+                            4.6分
+                            4.2K
+                        
+                    
+                
+
+                
+                    
+                        查看完整排行榜
+                    
+                
+            
+        
+    
+
+    
+
+    
+        
+            
+                
+                    
+                        
+                        智能体工具库
+                    
+                    发现和使用最强大的AI智能体工具，让工作和生活更高效
+                    
+                        
+                            
+                        
+                        
+                            
+                        
+                        
+                            
+                        
+                    
+                
+
+                
+                    智能体分类
+                    
+                        任务智能体
+                        对话智能体
+                        决策智能体
+                        协作智能体
+                        搜索智能体
+                    
+                
+
+                
+                    热门工具
+                    
+                        ChatGPT
+                        Gemini
+                        Claude
+                        AutoGPT
+                        文心一言
+                    
+                
+
+                
+                    联系我们
+                    
+                        
+                            
+                            contact@aigents.com
+                        
+                        
+                            
+                            +86 138 0013 8000
+                        
+                        
+                            
+                            北京市朝阳区
+                        
+                    
+                
+            
+
+            
+                © 2025 智能体工具库. 保留所有权利.
+            
+        
+    
+
+    
+
+    
+        
+    
+
+    
+        // 返回顶部功能
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('scale-0');
+                backToTopButton.classList.add('scale-100');
+            } else {
+                backToTopButton.classList.remove('scale-100');
+                backToTopButton.classList.add('scale-0');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 搜索框交互
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', function() {
+            this.parentElement.classList.add('ring-2', 'ring-primary/50');
+        });
+        searchInput.addEventListener('blur', function() {
+            this.parentElement.classList.remove('ring-2', 'ring-primary/50');
+        });
+    
+
+
